@@ -1,0 +1,30 @@
+doctype html
+html(lang="es")
+	head
+		meta(charset="utf-8")
+		title Inareca | Expertos en aislamientos
+		meta(name="description", content="")
+		link(rel="icon" href="img/favicon.png" type="image/png")
+		meta(name="author", content="Alejandro H Tadino M - Clicnovo")
+		meta(name="viewport", content="width=device-width, initial-scale=1")
+		link(rel='stylesheet' href='css/styles.min.css')
+		script(src=src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+		script(src="//cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js")
+	body
+		
+		//- Mixins ----------------------------------------
+		include mixin.pug
+			
+		//- Main Header ----------------------------------------
+		include header.pug
+			
+		//- Main Content ----------------------------------------
+		block body
+			
+		//- Main Footer ----------------------------------------
+		include footer.pug
+			
+		//- Scripts ----------------------------------------
+		script.
+			jQuery || <script src="js/jquery.min.js"></script>
+		script(src="js/functions.min.js")
