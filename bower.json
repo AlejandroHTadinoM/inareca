@@ -1,0 +1,18 @@
+{
+  "name": "inareca",
+  "description": "",
+  "main": "gulpfile.js",
+  "authors": [
+    "Alejandro H Tadino M"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/AlejandroHTadinoM/inareca",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
