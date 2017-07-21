@@ -9,14 +9,13 @@ html(lang="es")
 		meta(name="viewport", content="width=device-width, initial-scale=1")
 		link(rel='stylesheet' href='css/styles.min.css')
 		script(src=src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
-		script(src="//cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js")
 	body
 		
 		//- Mixins ----------------------------------------
 		include mixin.pug
 			
 		//- Main Header ----------------------------------------
-		include header.pug
+			include header.pug
 			
 		//- Main Content ----------------------------------------
 		block body
@@ -26,5 +25,5 @@ html(lang="es")
 			
 		//- Scripts ----------------------------------------
 		script.
-			jQuery || <script src="js/jquery.min.js"></script>
+			window.jQuery || document.write('<script src="jquery.js">\x3C/script>');
 		script(src="js/functions.min.js")
