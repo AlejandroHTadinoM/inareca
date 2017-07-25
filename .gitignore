@@ -41,5 +41,6 @@ Thumbs.db
 #######################
 src/
 dist/
+cache/
 node_modules/
 bower_components/
