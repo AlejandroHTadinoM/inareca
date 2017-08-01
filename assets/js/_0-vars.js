@@ -1,1 +1,2 @@
-console.log("loaded");
+var card = $('.card');
+service = $('.section-service');
