@@ -1,5 +1,28 @@
 $white: #FAFAFA
 $text: #212121
-$text-light: #444444
-$yellow: #ffcd11
+$text-light: #C7CED7
+$yellow: #F4C600
 $card-w: #e9eff2
+$blue: #3F82D3
+$dark: #0B1021
+$red: #BC203D
+$yellow-dark: #D79B01
+
+@keyframes inputHighlighter
+    from
+        background: $blue
+    to
+        width: 0
+        background: transparent
+
+@keyframes gradientAnimation
+	from
+		background: linear-gradient(75deg, $yellow 10%, lighten($yellow, 25))
+	to
+		background: linear-gradient(75deg, $yellow 100%, lighten($yellow, 25))
+
+@mixin yellowGradient
+	background: linear-gradient(75deg, $yellow, lighten($yellow, 25))
+
+@mixin blueGradient
+	background: linear-gradient(75deg, $blue, lighten($blue, 25))

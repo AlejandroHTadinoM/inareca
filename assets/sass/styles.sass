@@ -30,7 +30,7 @@ body
 	font-size: 2.2em
 	font-weight: 300
 	text-align: center
-	margin: .5em auto
+	margin: 4rem auto
 
 	&:after
 		content: ''
@@ -38,15 +38,30 @@ body
 		margin: .5em auto
 		width: 20%
 		height: 2px
-		background-color: $text
+		background-color: $blue
+
+.skew
+	content: ''
+	display: block
+	position: absolute
+	top: 0
+	left: -25%
+	right: 0
+	bottom: 0
+	width: 200vw
+	height: 50vh
+	background-color: transparentize($yellow, .3)
+	transform-origin: left
+	transform: rotate(15deg)
 
 .main-header
 	width: 100%
 	height: 100vh
-	background: linear-gradient(rgba($yellow, .6), rgba($yellow, .9)), url('/img/bg.jpg')
+	background: linear-gradient(rgba($yellow, .8), rgba($yellow, .8)), url('/img/bg.jpg')
 		size: cover
 		repeat: no-repeat
 		position: center
+		blend-mode: hard-light
 
 	.page-lead
 		margin-top: 50%
@@ -67,8 +82,14 @@ body
 				background-color: lighten($text, 20)
 				margin: .5em auto
 
+		#contact
+			background: linear-gradient(75deg, $blue, lighten($blue, 10))
+
+		#service
+			background: linear-gradient(75deg, $red, $yellow-dark)
+
 .navbar
-	background: $text
+	background: $dark
 	width: 100%
 	min-height: 64px
 	padding-top: 1rem
@@ -95,16 +116,17 @@ body
 		position: relative
 		width: 100%
 		box-shadow: 0 .4em 2px rgba(0, 0, 0, 0.4)
+		z-index: 10
 		transition: all .2s ease
 
 		&:hover
 			box-shadow: 0 1em 12px rgba(0, 0, 0, 0.3)
 			transform: scale(1.1)
-			z-index: 10
+			z-index: 99
 
 			.card-title
 				&:after
-					background-color: $yellow
+					background-color: $blue
 
 		img
 			width: 100%
@@ -115,7 +137,7 @@ body
 			right: 0
 			bottom: 0
 			width: 100%
-			height: 25%
+			height: 40%
 			background-color: $card-w
 			padding: 1em
 
@@ -123,7 +145,6 @@ body
 		text-transform: uppercase
 		font-weight: 700
 		font-size: 1.2em
-		
 
 		&:after
 			content: ''
@@ -141,8 +162,103 @@ body
 		text-transform: lowercase
 
 .section-service
-	background: linear-gradient(rgba(255, 205, 17, 0.6) 70%, rgba(255, 205, 17, 0.6)), url('//placehold.it/1920x1080')
-		size: cover
-		position: center
-		repeat: no-repeat
-	transition: all .4 ease
+	background: $white
+		blend-mode: luminosity
+	overflow: hidden
+	position: relative
+
+/*==================== Section Contact ====================*/
+.section-contactos
+	min-height: 100vh
+	position: relative
+	overflow: hidden
+    
+	.input
+		position: relative
+		margin-bottom: 2rem
+
+	form
+		margin-top: 10%
+
+	.bar
+		position: relative
+		width: 100%
+		display: block
+
+		&:before, &:after
+			content: ''
+			height: 2px
+			width: 0
+			bottom: 1px
+			position: absolute
+			background: $blue
+			transition: all .2s ease
+
+		&:before
+			left: 50%
+
+		&:after
+			right: 50%
+
+	.highlight
+		position: absolute
+		height: 60%
+		width: 100%
+		top: 25%
+		left: 0
+		pointer-events: none
+		opacity: .5
+
+	label
+		color: $text
+		font-size: 18px
+		font-weight: 300
+		position: absolute
+		pointer-events: none
+		left: .5em
+		top: 5px
+		transition: all .2s ease
+
+	input[type=text],
+	input[type=email],
+	textarea
+		display: block
+		width: 100%
+		border: none
+		padding: 1em 0
+		border-bottom: 1px solid #757575
+
+		&:focus
+			outline: none
+
+			~ label
+				top: -20px
+				font-size: 14px
+				color: $blue
+
+			~ .bar
+				&:before, &:after
+					width: 50%
+
+			~ .highlight
+				animation: inputHighlighter .3s ease
+
+	textarea
+		resize: none
+		height: 11.6em
+
+	input[type=reset],
+	input[type=submit]
+		width: 80%
+		margin: 1rem auto
+		border: none
+		border-radius: 4px
+		padding: 1em
+		color: $white
+
+	input[type=reset]
+		@include yellowGradient
+		color: $text !important
+
+	input[type=submit]
+		@include blueGradient
