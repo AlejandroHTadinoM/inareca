@@ -4,6 +4,7 @@ card.click(function (e) {
 		'background': 'url(' + imgSrc + ')',
 		'background-size': 'cover', 
 		'background-repeat': 'no-repeat', 
-		'background-position': 'center'
+		'background-position': 'center',
+		'background-attachment': 'fixed'
 	});
 });
