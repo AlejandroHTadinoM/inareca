@@ -4,7 +4,7 @@ function open (el) {
 		top : "-25%",
 		left : "-25%",
 		opacity : "1"
-	}, 600);
+	}, 400);
 }
 
 function close (el) {
@@ -13,7 +13,7 @@ function close (el) {
 		top : "25%",
 		left : "25%",
 		opacity : "0"
-	}, 600);
+	}, 400);
 }
 
 card.click(function () {
