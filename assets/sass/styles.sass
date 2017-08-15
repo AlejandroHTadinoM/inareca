@@ -72,16 +72,18 @@ body
 	transform-origin: right
 	transform: rotate(-9deg)
 
+/*==================== Section Header ====================*/
 .main-header
 	width: 100%
 	height: 100vh
 	background: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .6)), url('../img/bg.jpg')
 		size: cover
 		repeat: no-repeat
-		position: center
+		position: center top
+	overflow: hidden
 
 	.page-lead
-		margin-top: 25vh
+		margin-top: 12.5vh
 		color: $white
 
 		.page-title
@@ -106,6 +108,7 @@ body
 		#service
 			@include redGradient
 
+/*==================== Navbar ====================*/
 .navbar
 	background: $dark
 	width: 100%
@@ -125,6 +128,7 @@ body
 		width: 100%
 		height: 100%
 
+/*==================== Cards ====================*/
 .card
 	width: 100%
 	margin: 1rem auto
@@ -139,7 +143,7 @@ body
 
 		&:hover
 			box-shadow: 0 1em 12px rgba(0, 0, 0, 0.3)
-			transform: scale(1.1)
+			transform: scale(1.05)
 			z-index: 99
 
 			.card-title
@@ -179,12 +183,27 @@ body
 		font-weight: 300
 		text-transform: lowercase
 
+/*==================== Section About ====================*/
+.section-about
+	min-height: 70vh
+	padding: 4em 0
+
+	.about
+		font-weight: 300
+		font-size: 1.4em
+		text-align: center
+		color: darken($text-light, 40)
+
+		p:not(first-child)
+			margin-top: 2rem
+
 /*==================== Section Service ====================*/
 .section-service
-	background: $white
+	background: transparent
 		blend-mode: luminosity
 	overflow: hidden
 	position: relative
+	padding: 4rem 0
 
 /*==================== Section Contact ====================*/
 .section-contactos
@@ -282,6 +301,7 @@ body
 	input[type=submit]
 		@include blueGradient
 
+/*==================== Footer ====================*/
 .footer
 	background: $dark
 	color: $white
@@ -296,3 +316,20 @@ body
 		text-decoration: none
 		text-transform: capitalize
 		color: $white
+
+.img-wrap
+	width: 100%
+	height: 100vh
+	position: absolute
+
+
+	img
+		width: 150%
+		margin: 0 auto
+		position: absolute
+		top: -25%
+		left: -25%
+		right: 0
+		bottom: 0
+		transition: all .4s ease
+		z-index: -1

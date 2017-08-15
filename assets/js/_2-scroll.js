@@ -7,6 +7,9 @@ $(window).scroll(function () {
 		lead.css({
 			'transform': 'translateY(' + wScroll / 6 + '%)'
 		});
+		header.css({
+			'background-position' : 'center ' + (wScroll * .1) + '%'
+		});
 	}
 	
 });
