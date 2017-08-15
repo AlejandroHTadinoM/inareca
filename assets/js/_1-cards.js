@@ -4,53 +4,43 @@ function open (el) {
 		top : "-25%",
 		left : "-25%",
 		opacity : "1"
-	}, 1000);
+	}, 600);
 }
 
 function close (el) {
-	el.css({
+	el.animate({
 		width : "0%",
-		top : "50%",
-		left : "50%",
+		top : "25%",
+		left : "25%",
 		opacity : "0"
-	}, 1000);
+	}, 600);
 }
 
 card.click(function () {
 	var e = $(this);
 
-	console.log("click");
-	console.log(e);
-
 	imgSrc = e.data('src');
 
-	imgBg.attr('src', imgSrc);
+	if (imgFlag == false) {
 
-	imgLoad = new Image(imgBg);
+		imgBg.attr('src', imgSrc);
 
-	imgBg.onload = function () {
-		console.log("loaded");
-		console.log(imgSrc);
-	};
+		imgBg.on('load', function () {
+			open(imgBg);
+		});
 
-	// if (imgFlag == false) {
+		imgFlag = true;
 
-	// 	imgBg.attr('src', imgSrc);
+	} else if (imgFlag == true) {
 
-	// 	imgBg.onload(open(imgBg));
+		close(imgBg);
 
-	// 	imgFlag = true;
+		imgBg.attr('src', imgSrc);
 
-	// } else if (imgFlag == true) {
+		imgBg.on('load', function () {
+			open(imgBg);
+		});
 
-	// 	imgBg.attr('src', "");
-
-	// 	close(imgBg);
-
-	// 	imgBg.attr('src', imgSrc);
-
-	// 	open(imgBg);
-
-	// }
+	}
 	
 });
