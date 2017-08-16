@@ -1,8 +1,9 @@
 function open (el) {
 	el.animate({
 		width : "150%",
-		top : "-25%",
-		left : "-25%",
+		heigth: "150%",
+		top : "0",
+		left : "0",
 		opacity : "1"
 	}, 400);
 }
@@ -10,8 +11,11 @@ function open (el) {
 function close (el) {
 	el.animate({
 		width : "0%",
+		heigth: "0%",
 		top : "25%",
 		left : "25%",
+		right: "25%",
+		bottom: "25%",
 		opacity : "0"
 	}, 400);
 }
