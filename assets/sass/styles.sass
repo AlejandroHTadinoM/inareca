@@ -40,12 +40,13 @@ body
 	font-weight: 300
 	text-align: center
 	margin: 4rem auto
+	color: darken($text-light, 50%)
 
 	&:after
 		content: ''
 		display: block
 		margin: .5em auto
-		width: 20%
+		width: 10%
 		height: 2px
 		background-color: $blue
 
@@ -106,14 +107,19 @@ body
 	.page-lead
 		margin-top: 12.5vh
 		color: $white
+		text-align: center
 
 		.page-title
-			font-size: 6em
 			font-weight: 700
 			text-transform: uppercase
 
+			img
+				max-width: 100%
+				margin: 0 auto
+
 		.slogan
 			font-weight: 300
+			font-size: 1.6em
 
 			&:after
 				content: ''
@@ -124,10 +130,11 @@ body
 				margin: .5em auto
 
 		#contact
-			@include blueGradient
+			background: $yellow
+			color: $dark
 
 		#service
-			@include redGradient
+			background: $red
 
 /*==================== Navbar ====================*/
 .navbar
@@ -226,6 +233,17 @@ body
 	position: relative
 	padding-bottom: 4em
 
+	&:before
+		content: ''
+		display: block
+		width: 150%
+		height: 10vh
+		position: absolute
+		top: -2.5%
+		left: 0
+		background: $bg-light
+		transform-origin: 50% 50%
+		transform: rotate(3deg)
 /*==================== Section Contact ====================*/
 .section-contactos
 	min-height: 100vh
@@ -326,7 +344,7 @@ body
 .footer
 	background: $dark
 	color: $white
-	min-height: 20vh
+	min-height: 30vh
 
 	.footer-tag
 		text-transform: uppercase
@@ -334,6 +352,60 @@ body
 		padding: 2rem 0
 
 	.footer-link
+		display: block
+		margin-top: .5em
 		text-decoration: none
 		text-transform: capitalize
 		color: $white
+
+
+		&:after
+			content: ''
+			display: block
+			margin: .5em auto
+			width: 0%
+			height: 2px
+			background: $white
+			transition: all .4s ease
+
+		&:hover
+			&:after
+				content: ''
+				display: block
+				margin: .5em auto
+				width: 20%
+				height: 2px
+				background: $white
+
+	.footer-cont
+		text-align: center
+
+@media screen and (max-width: 48em)
+	.navbar
+		display: none
+
+	.menu-btn
+		position: absolute
+		width: 64px
+		height: 64px
+		border-radius: 100%
+		background: $white
+		z-index: 9999
+
+		.dot
+			content: ''
+			width: 4px
+			height: 4px
+			margin: 25% 10%
+			background: $dark
+			display: inline-block
+
+	.menu
+		position: relative
+		display: block
+		position: fixed
+		width: 100%
+		height: 100vh
+		background: $dark
+		color: $white
+		z-index: 999
