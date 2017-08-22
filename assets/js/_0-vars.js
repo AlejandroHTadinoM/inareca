@@ -6,4 +6,8 @@ var
 
 	imgWrap = $('.img-wrap'),
 	imgBg = imgWrap.find('.img-bg'),
-	imgFlag = false;
+	imgFlag = false,
+
+	menu = $('.menu'),
+	menuBtn = $('.menu-btn')
+	menuItem = menu.find('a');
