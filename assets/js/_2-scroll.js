@@ -8,7 +8,7 @@ $(window).scroll(function () {
 			'transform': 'translateY(' + wScroll / 6 + '%)'
 		});
 		header.css({
-			'background-position' : 'center ' + (wScroll * .1) + '%'
+			'background-position' : 'center ' + (wScroll * .1) + 'px'
 		});
 	}
 	

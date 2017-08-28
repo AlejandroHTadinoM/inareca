@@ -5,4 +5,5 @@ menuBtn.click(function () {
 
 menuItem.click(function () {
 	menu.toggleClass('open');
+	menuBtn.toggleClass('shadow');
 });

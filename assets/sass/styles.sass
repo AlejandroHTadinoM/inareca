@@ -6,7 +6,7 @@
 /*==================== Section Header ====================*/
 .main-header
 	width: 100%
-	height: 100vh
+	height: 125vh
 	background: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .6)), url('../img/bg.jpg')
 		size: cover
 		repeat: no-repeat
@@ -235,6 +235,7 @@
 
 	input[type=reset],
 	input[type=submit]
+		display: block
 		width: 80%
 		margin: 1rem auto
 		border: none
@@ -302,24 +303,24 @@
 		z-index: 9999
 		top: 5%
 		right: 5%
+		transition: all .8s ease
 
 		.dot
 			content: ''
-			width: 6px
-			height: 6px
-			margin: 0 .5em
+			width: 32px
+			height: 2px
+			margin: 15.15% auto
 			background: $dark
-			display: inline-block
+			display: block
 			position: relative
-			top: 35%
+			top: 12.5%
 			left: 0
-			border-radius: 100%
 
 	.menu
 		display: block
 		position: fixed
 		width: 100%
-		height: 100vh
+		height: 100%
 		background: $dark
 		color: $white
 		z-index: 999
@@ -329,19 +330,30 @@
 		a
 			position: relative
 			text-decoration: none
+			width: 60%
 			color: $white
 			display: block
 			text-transform: uppercase
 			text-align: center
 			font-size: 2em
 			font-weight: 700
-			margin: 2em auto
+			padding: 1.5em
+			margin: 1em auto 0
+			border-radius: .3em
+
+			&:hover
+				background: $white
+				color: $dark
+
+				&:after,
+				&:before
+					width: 40%
 
 			&:after,
 			&:before
 				content: ''
 				position: absolute
-				bottom: -50%
+				bottom: -25%
 				background: $white
 				margin: 0 auto
 				height: 2px
@@ -353,11 +365,6 @@
 
 			&:before
 				right: 50%
-
-			&:hover
-				&:after,
-				&:before
-					width: 12.5%
 
 	.section-about
 		p
