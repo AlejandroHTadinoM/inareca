@@ -4,5 +4,6 @@ mixin Cards(t, d, s, i)
 			figure
 				img(src=s).card-img
 				figcaption
-					h4.card-title= t
-					p.card-desc= d
+					.caption-wrap
+						h4.card-title= t
+						p.card-desc= d

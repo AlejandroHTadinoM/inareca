@@ -14,17 +14,13 @@
 	overflow: hidden
 
 	.page-lead
-		margin-top: 12.5vh
+		margin-top: 25%
 		color: $white
 		text-align: center
 
 		.page-title
 			font-weight: 700
 			text-transform: uppercase
-
-			img
-				max-width: 100%
-				margin: 0 auto
 
 		.slogan
 			font-weight: 300
@@ -50,7 +46,8 @@
 	background: $dark
 	width: 100%
 	min-height: 64px
-	padding-top: 1rem
+	position: fixed
+	z-index: 9999
 	box-shadow: 0 2px 8px 2px rgba(0, 0, 0, .6)
 
 	ul
@@ -98,7 +95,10 @@
 			width: 100%
 			height: 40%
 			background-color: $card-w
-			padding: 1em
+
+			.caption-wrap
+				margin: .5em auto
+				width: 90%
 
 	.card-title
 		text-transform: uppercase
@@ -142,13 +142,12 @@
 	position: relative
 	padding-bottom: 4em
 
-	&:before
+	&:after
 		content: ''
-		display: block
 		width: 150%
-		height: 10vh
+		height: 10%
 		position: absolute
-		top: -2.5%
+		top: -5%
 		left: 0
 		background: $bg-light
 		transform-origin: 50% 50%
