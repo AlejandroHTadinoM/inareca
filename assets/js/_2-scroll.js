@@ -5,6 +5,7 @@ $(window).scroll(function () {
 
 	if (wScroll < headerH) {
 		lead.css({
+			'transition': 'none',
 			'transform': 'translateY(' + wScroll / 6 + '%)'
 		});
 		header.css({
