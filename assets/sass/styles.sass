@@ -220,6 +220,7 @@
 		border: none
 		padding: 1em 0
 		border-bottom: 1px solid $text-light
+		box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4)
 
 		&:focus
 			outline: none
@@ -296,65 +297,112 @@
 	.footer-cont
 		text-align: center
 
-/*==================== Footer ====================*/
-.section-us
-	overflow: hidden
-	padding: 1em 0 4em
+.clicnovo
+	text-align: center
+	display: block
+	margin: .5em auto
 
-	.sub-title
-		margin: 4em auto 2em
+	p
+		font-weight: 700
+		text-transform: capitalize
+		display: inline-block
 
-	.us-inner
-		text-align: justify
-		width: 80%
-		margin: 0 auto
-		display: block
+	a
+		text-decoration: none
+		color: $yellow
 
 		&:hover
-			.about-sub
-				color: $blue
+			color: $white
 
+		&:visited
+			text-decoration: none
+			color: $yellow
+
+
+/*==================== About Us ====================*/
+
+.container-full
+	display: flex
+	width: 100%
+	justify-content: space-evenly
+	align-items: stretch
+	align-content: center
+	min-height: 70vh
+
+	.us-wrap
+		display: flex
+		width: 100%
+		justify-content: space-evenly
+		align-items: center
+		align-content: center
+		position: relative
+		overflow: hidden
+		background-blend-mode: overlay
+
+		&:hover
+			background: linear-gradient(rgba(darken($yellow, 30%), .6), rgba($dark, .6))
+
+			.us-inner
+				opacity: 1
+				transform: scale(1)
+
+			.us-img
+				img
+					filter: blur(15px)
+
+			.about-sub
 				&:before,
 				&:after
-					width: 6.25%
+					width: 12.5%
 
-		p
-			margin-bottom: 2em
+		.us-img
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			z-index: -1
 
-		.us-tag
-			text-transform: capitalize
+			img
+				max-width: 100%
+				transition: all .4s ease
+
+
+		.us-inner
+			text-align: justify
+			width: 80%
+			opacity: 0
+			transition: all .4s ease
+			color: $white
+			font-weight: 300
+			font-size: 1.2em
+			transform: scale(1.2)
+
+			p
+				margin-top: 1em
 
 	.about-sub
 		text-align: center
-		position: relative
 		text-transform: uppercase
-		font-weight: 700
-		margin: .5em auto 2em
-		color: $text-light
+		position: relative
 
 		&:before,
 		&:after
 			content: ''
-			position: absolute
-			margin: 0 auto
-			bottom: 0
 			display: block
 			width: 0
 			height: 2px
-			background: $blue
+			position: absolute
+			bottom: 0
+			margin: 0 auto
+			background: $white
 			transition: all .4s ease
 
 		&:before
-			right: 50%
-
-		&:after
 			left: 50%
 
-	.us-content
-		font-weight: 300
-		font-size: 1.2em
-		padding: 1em 0 12.5%
-		margin-bottom: 10%
+		&:after
+			right: 50%
 
 /*==================== Media Queries ====================*/
 @media screen and (max-width: 48em)
